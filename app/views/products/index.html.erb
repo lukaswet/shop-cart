@@ -3,9 +3,13 @@
 		<li>
       <%= link_to product.name, product_path(id: product.id) %>
 			<%= price_format (product.price) %> |
-      <form action="<%= destroy_product_path(id: product.id) %>">
-        <input type="submit" value="Delete" method="delete">
-      </form>
+
+      <%= link_to 'Delete', destroy_product_path(id: product.id), method: :delete %>
+
+      <!--Another delete method-->
+      <!--<%= form_for product, method: :delete do |f| %>-->
+        <!--<% f.submit 'Delete' %>-->
+      <!--<% end %>-->
 		</li>
 	<% end %>
 </ul>

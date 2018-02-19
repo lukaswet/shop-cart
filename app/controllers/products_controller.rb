@@ -14,8 +14,8 @@ class ProductsController < ApplicationController
 
   def create
     @product = Product.new
-    @product.price = params[:price]
-    @product.name = params[:name]
+    @product.price = params[:product][:price]
+    @product.name = params[:product][:name]
     @product.save
 
     redirect_to products_path

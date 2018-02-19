@@ -1,6 +1,6 @@
-<form action="<%= create_product_path %>" method="POST">
-  <input type="text" name="name" placeholder="Name">
-  <input type="text" name="price" placeholder="Price">
+<%= form_for @product do |f| %>
+  <%= f.text_field :name, placeholder: 'Name' %>
+  <%= f.text_field :price, placeholder: 'Price' %>
 
-  <input type="submit" value="Create">
-</form>
+  <%= f.submit 'Save' %>
+<% end %>
