@@ -1,24 +1,30 @@
 class ProductsController < ApplicationController
 
-	PRODUCTS = [
-			{
-				id: 1,
-				price: 100,
-				name: 'phone'
-			},
-
-			{
-				id: 2,
-				price: 250,
-				name: 'watch'
-			}
-	]
-
-	def index	
-		@products = PRODUCTS
+	def index
+    @products = Product.all
 	end
 
 	def show
-		@product = PRODUCTS.find { |p| p[:id] === params[:id].to_i }
-	end
+		@product = Product.find(params[:id])
+  end
+
+  def new
+    @product = Product.new
+  end
+
+  def create
+    @product = Product.new
+    @product.price = params[:price]
+    @product.name = params[:name]
+    @product.save
+
+    redirect_to products_path
+  end
+
+  def destroy
+    @product = Product.find(params[:id])
+    @product.destroy
+
+    redirect_to products_path
+  end
 end

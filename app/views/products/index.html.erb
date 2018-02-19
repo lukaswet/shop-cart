@@ -1,8 +1,12 @@
 <ul>
 	<% @products.each do |product| %>
 		<li>
-      <%= link_to product[:name], product_path(id: product[:id]) %>
-			<%= product[:price] %> $
+      <%= link_to product.name, product_path(id: product.id) %>
+			<%= price_format (product.price) %> |
+      <form action="<%= destroy_product_path(id: product.id) %>">
+        <input type="submit" value="Delete" method="delete">
+      </form>
 		</li>
 	<% end %>
 </ul>
+<%= link_to 'New Product', new_product_path %>
