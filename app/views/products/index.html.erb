@@ -3,7 +3,7 @@
 		<li>
       <%= link_to product.name, product_path(id: product.id) %>
 			<%= price_format (product.price) %> |
-
+      <%= link_to 'Edit', edit_product_path(id: product.id) %> |
       <%= link_to 'Delete', destroy_product_path(id: product.id), method: :delete %>
 
       <!--Another delete method-->
