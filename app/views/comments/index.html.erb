@@ -1,0 +1,20 @@
+<ul>
+  <% @comments.each do |comment| %>
+    <% next unless comment.persisted? %>
+    <li><%= comment.nickname %> : <%= comment.text %></li>
+  <% end %>
+</ul>
+
+<% if @comment.errors.present? %>
+  <ul>
+    <% @comment.errors.messages.each do |field, message| %>
+      <li><%= field %>: <%= message.join(' | ') %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= form_for [@product, @comment] do |form| %>
+  <%= form.text_field :nickname, placeholder: 'nickname' %> <br>
+  <%= form.text_area :text, placeholder: 'your comment' %> <br>
+  <%= form.submit %>
+<% end %>
