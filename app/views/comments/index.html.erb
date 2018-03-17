@@ -13,7 +13,7 @@
   </ul>
 <% end %>
 
-<%= form_for [@product, @comment] do |form| %>
+<%= form_for [@product, @comment], remote: true do |form| %>
   <%= form.text_field :nickname, placeholder: 'nickname' %> <br>
   <%= form.text_area :text, placeholder: 'your comment' %> <br>
   <%= form.submit %>
