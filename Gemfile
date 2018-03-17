@@ -54,5 +54,8 @@ gem 'pry'
 gem 'pry-remote'
 gem 'pry-nav'
 
+gem 'kaminari'
+gem 'bootstrap4-kaminari-views'
+
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

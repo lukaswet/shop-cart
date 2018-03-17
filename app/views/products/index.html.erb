@@ -13,4 +13,8 @@
 		</li>
 	<% end %>
 </ul>
+
+<%= paginate @products, :theme => 'twitter-bootstrap-4' %>
+<br />
 <%= link_to 'New Product', new_product_path %>
+

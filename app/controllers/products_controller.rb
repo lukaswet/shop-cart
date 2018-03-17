@@ -1,7 +1,11 @@
 class ProductsController < ApplicationController
 
 	def index
-    @products = Product.all
+    @page = params[:page].present? ? params[:page].to_i : 1
+    @products = Product.page(@page)
+
+    # @products = Product.all
+    # @products = Product.page(7).per(50)
 	end
 
 	def show
