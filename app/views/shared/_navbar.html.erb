@@ -1,0 +1,37 @@
+<nav class="navbar navbar-expand-md navbar-light fixed-top bg-light">
+  <a class="navbar-brand" href="<%= root_path %>">SKLEP</a> &nbsp; &nbsp;
+
+  <%= link_to 'PRODUCTS', products_path %>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarCollapse">
+
+    <ul class="navbar-nav ml-auto">
+
+      <% if(!user_signed_in?) %>
+
+        <li><%= link_to "Log in", new_user_session_path %></li>&nbsp;&nbsp;
+        <li><%= link_to "Sign up", new_user_registration_path %></li>
+
+      <% else %>
+
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <%= current_user.email %>
+          </button>
+
+          <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+            <button class="dropdown-item" type="button"><%= link_to "Edit Profile", edit_user_registration_path %></button>
+            <div class="dropdown-divider"></div>
+            <button class="dropdown-item" type="button">Profile Settings</button>
+            <button class="dropdown-item" type="button"><%= link_to "Logout", destroy_user_session_path, method: :delete %></button>
+          </div>
+        </div>
+
+      <% end %>
+
+    </ul>
+  </div>
+</nav>
