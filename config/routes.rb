@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  resources :users do
+    collection do
+      get :me
+    end
+  end
 
   devise_for :users
   root to: 'home#index'

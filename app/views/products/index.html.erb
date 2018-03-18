@@ -1,7 +1,9 @@
-<main role="main">
-  <div class="jumbotron">
-    <div class="col-sm-8 mx-auto">
-      <h1>Products List</h1>
+<p></p>
+<div class="products__view">
+  <main role="main">
+    <div class="jumbotron">
+      <div class="col-sm-8 mx-auto">
+        <h1>Products List</h1>
         <div class="product__list">
           <ul>
             <% @products.each do |product| %>
@@ -22,13 +24,16 @@
           <%= paginate @products, :theme => 'twitter-bootstrap-4' %>
 
         </div>
-      <div class="active">
-        <p>
-          <a class="btn btn-primary" href="<%= new_product_path %>" role="button">NEW PRODUCT &raquo;</a>
-        </p>
-      </div>
+        <div class="active">
+          <p>
+            <a class="btn btn-primary" href="<%= new_product_path %>" role="button">NEW PRODUCT &raquo;</a>
+          </p>
+        </div>
 
+      </div>
     </div>
-  </div>
-</main>
+  </main>
 </div>
+
+
+
