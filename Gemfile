@@ -51,6 +51,7 @@ gem 'bootstrap', '~> 4.0.0'
 gem 'jquery-rails'
 gem 'devise-bootstrap-views', :git => 'https://github.com/hisea/devise-bootstrap-views.git', :branch => 'bootstrap4'
 gem "paperclip", "~> 6.0.0"
+gem 'carrierwave', '~> 1.0'
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

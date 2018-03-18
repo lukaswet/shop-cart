@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180318143224) do
+ActiveRecord::Schema.define(version: 20180318180403) do
 
   create_table "comments", force: :cascade do |t|
     t.string "nickname"
@@ -19,6 +19,14 @@ ActiveRecord::Schema.define(version: 20180318143224) do
     t.datetime "updated_at", null: false
     t.integer "product_id"
     t.index ["product_id"], name: "index_comments_on_product_id"
+  end
+
+  create_table "images", force: :cascade do |t|
+    t.string "file"
+    t.integer "imagable_id"
+    t.integer "imagable_type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "products", force: :cascade do |t|

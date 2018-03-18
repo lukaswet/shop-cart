@@ -1,10 +1,11 @@
 <nav class="navbar navbar-expand-md navbar-light fixed-top bg-light">
-  <a class="navbar-brand" href="<%= root_path %>">SKLEP</a> &nbsp; &nbsp;
-
-  <%= link_to 'PRODUCTS', products_path %>
+  <a class="navbar-brand" href="<%= root_path %>">SKLEP</a>
+    <a class="nav-link mr-auto bg-light" href="<%= products_path %>">PRODUCTS</a>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
+    <span class="navbar-toggler-icon">
+      
+    </span>
   </button>
   <div class="collapse navbar-collapse" id="navbarCollapse">
 
@@ -24,7 +25,7 @@
 
           <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
             <!--<button class="dropdown-item" type="button"><%= link_to "Edit Profile", edit_user_registration_path %></button>-->
-            <button class="dropdown-item" type="button"><%= link_to current_user.email %></button>
+            <button class="dropdown-item mr-auto" type="button"><%= link_to current_user.email %></button>
             <div class="dropdown-divider"></div>
             <button class="dropdown-item" type="button"><%= link_to "My account", me_users_path %></button>
             <button class="dropdown-item" type="button"><%= link_to "Logout", destroy_user_session_path, method: :delete %></button>
