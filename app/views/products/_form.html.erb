@@ -1,8 +1,7 @@
-<br />
 <%= form_for @product do |f| %>
-  <%= f.text_field :name, placeholder: 'Name' %>
   <%= f.text_field :price, placeholder: 'Price' %>
+  <%= f.text_field :name, placeholder: 'Name' %>
   <%= f.file_field :images %>
 
-  <%= f.submit 'Save' %>
+  <%= f.submit 'Create' %>
 <% end %>
