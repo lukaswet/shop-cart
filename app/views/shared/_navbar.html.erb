@@ -19,12 +19,17 @@
       <% else %>
 
         <div class="dropdown">
-          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <button class="btn btn-secondary dropdown-toggle"
+                  type="button"
+                  id="dropdownMenu2"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false">
             <%= image_tag current_user.avatar.url(:thumb), size: '35x35' %>   <%= current_user.full_name %>
           </button>
 
           <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-            <!--<button class="dropdown-item" type="button"><%= link_to "Edit Profile", edit_user_registration_path %></button>-->
+            <button class="dropdown-item" type="button"><%= link_to "Edit Profile", edit_user_registration_path %></button>
             <button class="dropdown-item mr-auto" type="button"><%= link_to current_user.email %></button>
             <div class="dropdown-divider"></div>
             <button class="dropdown-item" type="button"><%= link_to "My account", me_users_path %></button>

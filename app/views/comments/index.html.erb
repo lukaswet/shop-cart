@@ -2,7 +2,7 @@
 <ul>
   <% @comments.each do |comment| %>
     <% next unless comment.persisted? %>
-    <li><%= comment.nickname %> : <%= comment.text %></li>
+    <li><%= comment.user.present? ? comment.user.full_name : 'Anonym' %> : <%= comment.text %></li>
   <% end %>
 </ul>
 
@@ -15,7 +15,7 @@
 <% end %>
 
 <%= form_for [@product, @comment], remote: true do |form| %>
-  <%= form.text_field :nickname, placeholder: 'nickname' %> <br>
+  <br>
   <%= form.text_area :text, placeholder: 'your comment' %> <br>
   <%= form.submit %>
 <% end %>
