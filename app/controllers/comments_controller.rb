@@ -7,6 +7,13 @@ class CommentsController < ApplicationController
     @comment = @product.comments.new
   end
 
+  def destroy
+    @comment = @product.comments.find_by(id: params[:id], user: current_user.id)
+    @comment.destroy if @comment.present?
+    # head :no_content
+    redirect_to product_comments_path(@product)
+  end
+
   def create
     @comment = @product.comments.new(comment_params)
     @comment.user = current_user

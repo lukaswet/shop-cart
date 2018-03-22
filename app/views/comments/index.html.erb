@@ -2,7 +2,14 @@
 <ul>
   <% @comments.each do |comment| %>
     <% next unless comment.persisted? %>
-    <li><%= comment.user.present? ? comment.user.full_name : 'Anonym' %> : <%= comment.text %></li>
+    <li><%= comment.user.present? ? comment.user.full_name : 'Anonym' %> : <%= comment.text %>
+
+      <% if comment.user.present? && comment.user == current_user %>
+        <%= link_to 'Delete',
+                      product_comment_path(@product, comment),
+                      method: :delete, class: 'btn btn-default', remote: true %>
+      <% end %>
+    </li>
   <% end %>
 </ul>
 

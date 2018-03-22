@@ -8,7 +8,7 @@ class User < ApplicationRecord
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/
 
   has_many :comments
-  has_many :products, through: :comments
+  has_many :commented_products, through: :comments, source: :product
 
   def full_name
     "#{first_name} #{last_name}"

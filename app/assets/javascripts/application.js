@@ -13,7 +13,7 @@
 //= require popper
 //= require bootstrap-sprockets
 //= require rails-ujs
-// require turbolinks
+//= require turbolinks
 //= require_tree .
 //= require products
 //= require comments
