@@ -1,9 +1,10 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :destroy, :edit, :update]
+  before_action :increment_prod, only: :show
 
 	def index
     @page = params[:page].present? ? params[:page].to_i : 1
-    @products = Product.page(@page)
+    @products = Product.order('view_count DESC').page(@page)
 
     # @products = Product.all
     # @products = Product.page(7).per(50)
@@ -48,5 +49,9 @@ class ProductsController < ApplicationController
 
   def product_params
     params.require(:product).permit(:name, :price, images_attributes: [:file])
+  end
+
+  def increment_prod
+    @product.increment!(:view_count)
   end
 end

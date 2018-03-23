@@ -1,4 +1,7 @@
 class Product < ApplicationRecord
+  include Redis::Objects
+  counter :view
+
   has_many :comments
   has_many :commented_users, through: :comments, source: :user
   has_many :uniq_commented_users, -> { uniq },
