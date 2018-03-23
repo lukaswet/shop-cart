@@ -1,6 +1,9 @@
 class Product < ApplicationRecord
+  include Likable
   include Redis::Objects
   counter :view
+
+  serialize :like, Array
 
   has_many :comments
   has_many :commented_users, through: :comments, source: :user
@@ -13,4 +16,5 @@ class Product < ApplicationRecord
 
   validates :name, :price, presence: true
   validates_uniqueness_of :name
+
 end
