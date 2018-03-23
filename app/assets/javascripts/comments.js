@@ -1,9 +1,9 @@
-$(function() {
-    window.WsClient = new WebSocket('ws://localhost:8080');
-    WsClient.onmessage = function(response) {
-        console.log(JSON.parse(response.data));
-    }
-});
+// $(function() {
+//     window.WsClient = new WebSocket('ws://localhost:8080');
+//     WsClient.onmessage = function(response) {
+//         console.log(JSON.parse(response.data));
+//     }
+// });
 
 $(function() {
     // console.log($('#new_comment'));

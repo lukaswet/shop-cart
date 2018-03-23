@@ -40,6 +40,7 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem "better_errors"
   gem "binding_of_caller"
+  gem 'bullet'
 end
 
 gem 'pry'
@@ -55,7 +56,7 @@ gem 'devise-bootstrap-views', :git => 'https://github.com/hisea/devise-bootstrap
 gem "paperclip", "~> 6.0.0"
 gem 'carrierwave', '~> 1.0'
 gem 'mini_magick'
-gem 'em-websocket'
+# gem 'em-websocket'
 gem "bunny", ">= 2.9.2"
 gem 'redis-objects'
 

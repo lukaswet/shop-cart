@@ -4,7 +4,7 @@ class ProductsController < ApplicationController
 
 	def index
     @page = params[:page].present? ? params[:page].to_i : 1
-    @products = Product.order('view_count DESC').page(@page)
+    @products = Product.order('updated_at DESC').page(@page)
 
     # @products = Product.all
     # @products = Product.page(7).per(50)
@@ -52,6 +52,6 @@ class ProductsController < ApplicationController
   end
 
   def increment_prod
-    @product.increment!(:view_count)
+    @product.view.increment
   end
 end

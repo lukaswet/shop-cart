@@ -10,7 +10,8 @@
               <li>
                 <%= link_to product.name, product_path(id: product.id) %>
                 <%= price_format (product.price) %> |
-                views:  <%= product.view_count %> |
+                views:  <%= product.view.value %> |
+                comments: <%= product.comments_count %>
                 <%= link_to 'Edit', edit_product_path(id: product.id) %> |
                 <%= link_to 'Delete', product_path(id: product.id), method: :delete %>
 
