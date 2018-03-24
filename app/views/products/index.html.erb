@@ -12,7 +12,7 @@
                 <%= price_format (product.price) %> |
                 views:  <%= product.view.value %> |
                 comments: <%= product.comments_count %> |
-                likes: <%= product.like.count %> |
+                likes: <%= product.likes.count %> |
                 <% if product.liked?(current_user) %>
                   <%= link_to 'Unlike', unlike_product_likes_path(product), method: :put, remote: true %>
                 <% else %>
