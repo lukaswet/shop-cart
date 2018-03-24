@@ -60,5 +60,8 @@ gem 'mini_magick'
 gem "bunny", ">= 2.9.2"
 gem 'redis-objects'
 
+gem 'omniauth'
+gem 'omniauth-facebook'
+
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
