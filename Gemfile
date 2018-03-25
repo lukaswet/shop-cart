@@ -64,6 +64,7 @@ gem 'omniauth'
 gem 'omniauth-facebook'
 
 gem 'activeadmin'
+gem 'activeadmin_blaze_theme'
 gem 'grape'
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
