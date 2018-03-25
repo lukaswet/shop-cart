@@ -4,7 +4,7 @@ ActiveAdmin.register Product do
   index do
     selectable_column
     id_column
-    column :email
+    column :name
     column :price
     column :updated_at
     column :created_at

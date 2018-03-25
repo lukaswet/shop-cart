@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  mount Api => '/'
+
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   get '/auth/:provider/callback', to: 'sessions#create'
