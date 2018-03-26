@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180325120830) do
+ActiveRecord::Schema.define(version: 20180326111311) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -78,6 +78,8 @@ ActiveRecord::Schema.define(version: 20180325120830) do
     t.integer "view_count", default: 0
     t.integer "comments_count", default: 0
     t.text "like"
+    t.string "type"
+    t.index ["type"], name: "index_products_on_type"
   end
 
   create_table "products_users", id: false, force: :cascade do |t|

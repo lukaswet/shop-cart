@@ -3,11 +3,17 @@ class ProductsController < ApplicationController
   before_action :increment_prod, only: :show
 
 	def index
-    @page = params[:page].present? ? params[:page].to_i : 1
-    @products = Product.order('updated_at DESC').page(@page)
+    @q = Product.ransack(params[:q])
+    @products = @q.result.order('updated_at DESC')
 
-    # @products = Product.all
-    # @products = Product.page(7).per(50)
+    # @per_page = params[:per_page].present? ? params[:per_page].to_i : 5
+    @page = params[:page].present? ? params[:page].to_i : 1
+
+    @products = @products.page(@page)
+    respond_to do |format|
+      format.html
+      format.json { render :index }
+    end
 	end
 
 	def show
