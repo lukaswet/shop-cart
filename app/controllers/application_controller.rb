@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
   # protect_from_forgery with: :exception
 
   before_action :before_some_method
+  before_action :set_locale
   after_action :after_some_method
   # around_action :around_some_method
 
@@ -18,5 +19,9 @@ class ApplicationController < ActionController::Base
 
   def around_some_method
     puts 'around_action => some_method'
+  end
+
+  def set_locale
+    I18n.locale = params[:lang]
   end
 end
